@@ -1,0 +1,32 @@
+﻿@model Dziekanat.Models.Course
+
+@{
+    ViewData["Title"] = "Dodawanie nowego kursu";
+}
+
+<h1 class="display-6">@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ECTSPoints"></label>
+        <input asp-for="ECTSPoints" class="form-control" />
+        <span asp-validation-for="ECTSPoints" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Hours"></label>
+        <input asp-for="Hours" class="form-control" />
+        <span asp-validation-for="Hours" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Dodaj" class="btn btn-primary" />
+    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+</form>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Obsługa zajęć";
+}
+<div>
+    <h1 class="display-6">@ViewData["Title"]</h1>
+</div>
+<a asp-action="Create" class="btn btn-primary mb-2">Dodaj nowy kurs</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Opis</th>
+            <th>ECTS</th>
+            <th>Godziny</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.Name</td>
+                <td>@course.Description</td>
+                <td>@course.ECTSPoints</td>
+                <td>@course.Hours</td>
+            </tr>
+        }
+    </tbody>
+</table>

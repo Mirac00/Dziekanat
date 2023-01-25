@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Obsługa studentów";
+}
+
+<div>
+    <h1 class="display-6">@ViewData["Title"]</h1>
+</div>
+<a asp-action="Create" class="btn btn-primary mb-2">Dodaj nowego studenta</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>SID</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.SID</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+            </tr>
+        }
+    </tbody>
+</table>
